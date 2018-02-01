@@ -6,6 +6,7 @@ public class Deck {
 
   private Card[] cards;
   private Random rng; //added for shuffle
+  private int nextCardToDraw = 0;
 
   public Card[] getCards() {
     return cards;
@@ -33,6 +34,11 @@ public class Deck {
         cards[source] = temp;
       }
     }
+    nextCardToDraw = 0;
+  }
+  //FIXME - Do somthing smarter with the out-of-bounds problems.
+  public Card draw()throws ArrayIndexOutOfBoundsException {
+    return cards[nextCardToDraw++]; //draw a card then increment it
   }
 
 }
