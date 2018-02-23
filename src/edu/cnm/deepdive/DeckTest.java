@@ -8,5 +8,10 @@ public class DeckTest {
     for (Card card : deck.getCards()){//get all the cards
       System.out.println(card); //print that toString
     }
+    System.out.println("------Sorted------");
+    deck.sort();
+    for (Card card : deck.getCards()) {//get all the cards
+      System.out.println(card);
+    }
   }
 }
